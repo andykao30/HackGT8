@@ -1,4 +1,4 @@
 # HackGT8
-Tyler, Leo, Andy HackGT8 Project
+Randy, Tyler, Leo, Andy HackGT8 Project
 
 PokeAPI JavaFX
