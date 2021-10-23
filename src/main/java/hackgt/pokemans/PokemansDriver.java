@@ -10,6 +10,8 @@ public class PokemansDriver {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         ArrayList<String> arr = PokemansQuery.search(input);
-        System.out.println(arr.get(0));
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
     }
 }
