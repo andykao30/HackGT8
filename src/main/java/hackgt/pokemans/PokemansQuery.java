@@ -15,6 +15,7 @@ import java.io.IOException;
 public class PokemansQuery {
 
     public static ArrayList<String> search(String pokeman) {
+        pokeman = pokeman.toLowerCase();
         String sURL = "https://pokeapi.co/api/v2/pokemon/" + pokeman;
         ArrayList<String> data = new ArrayList<>();
         try {

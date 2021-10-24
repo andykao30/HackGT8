@@ -5,6 +5,9 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
 import java.util.ArrayList;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.paint.Color;
+import javafx.geometry.Pos;
 
 public class PokemansPokedex extends HBox{
 
@@ -17,9 +20,18 @@ public class PokemansPokedex extends HBox{
         super();
         base = PokemansQuery.search(pokeman);
         holder = new ImageView();
-        pokeInfo = new Text(base.get(1));
-        updatePoke(pokeman);
-        this.getChildren().addAll(holder, pokeInfo);
+        try {
+            pokeInfo = new Text(base.get(1));
+            pokeInfo.setTextAlignment(TextAlignment.CENTER);
+            Color c = Color.rgb(0, 90, 0);
+            pokeInfo.setFill(c);
+            updatePoke(pokeman);
+            this.getChildren().addAll(holder, pokeInfo);
+            this.setAlignment(Pos.CENTER);
+        } catch (IndexOutOfBoundsException ioobe) {
+            System.out.println("Error: " + ioobe.getMessage());
+            System.exit(1);
+        }
     }
 
     public void updatePoke(String pokemon) {
